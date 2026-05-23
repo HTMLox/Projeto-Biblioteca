@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblio EEEP — Biblioteca da sua escola</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar" aria-label="Navegação principal">
+        <a href="#" class="brand" data-page="landing" aria-label="Ir para início">
+            <span class="brand-icon" aria-hidden="true">📚</span>
+            <span>Biblio <strong>EEEP</strong></span>
+        </a>
+        <div class="nav-links">
+            <a href="#" data-page="landing">Início</a>
+            <a href="#" data-page="catalog">Catálogo</a>
+            <a href="#" data-page="dashboard" class="auth-only">Painel</a>
+            <button id="nav-auth-btn" class="btn-primary btn-nav">Entrar</button>
+        </div>
+    </nav>
+
+    <main id="app">
+        <section id="landing" class="page active">
+            <div class="hero">
+                <div class="hero-bg" aria-hidden="true"></div>
+                <div class="hero-content">
+                    <span class="hero-badge">Biblioteca escolar · EEEP</span>
+                    <h1>Seu cantinho de leitura, agora mais organizado</h1>
+                    <p>Empréstimos, acervo e consultas em um só lugar — feito para quem cuida da biblioteca e para quem ama um bom livro.</p>
+                    <div class="hero-actions">
+                        <button class="btn-primary" data-page="login">Começar agora</button>
+                        <button class="btn-outline" data-page="register">Primeira vez aqui?</button>
+                    </div>
+                </div>
+                <div class="hero-stats" aria-label="Números da biblioteca">
+                    <div class="stat-item"><span data-count="1248">1.248</span><p>livros no acervo</p></div>
+                    <div class="stat-item"><span data-count="432">432</span><p>leitores cadastrados</p></div>
+                    <div class="stat-item"><span data-count="89">89</span><p>empréstimos este mês</p></div>
+                </div>
+            </div>
+
+            <div class="features">
+                <p class="section-eyebrow">O que você pode fazer</p>
+                <h2>Tudo o que a biblioteca precisa, sem complicação</h2>
+                <div class="feature-grid">
+                    <article class="card feature-card">
+                        <span class="feature-icon" aria-hidden="true">🔍</span>
+                        <h3>Encontre qualquer livro</h3>
+                        <p>Busque por título, autor ou gênero — como perguntar à bibliotecária, só que na hora.</p>
+                    </article>
+                    <article class="card feature-card">
+                        <span class="feature-icon" aria-hidden="true">📋</span>
+                        <h3>Empréstimos sob controle</h3>
+                        <p>Prazos, devoluções e avisos de atraso bem visíveis, para ninguém ficar na dúvida.</p>
+                    </article>
+                    <article class="card feature-card">
+                        <span class="feature-icon" aria-hidden="true">📊</span>
+                        <h3>Visão do dia a dia</h3>
+                        <p>Veja de relance quantos livros estão na estante, emprestados ou com prazo vencendo.</p>
+                    </article>
+                    <article class="card feature-card">
+                        <span class="feature-icon" aria-hidden="true">👥</span>
+                        <h3>Cada um no seu papel</h3>
+                        <p>Bibliotecária, monitores e alunos — cada perfil vê só o que precisa.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="login" class="page">
+            <div class="auth-wrapper">
+                <div class="auth-box">
+                    <span class="auth-emoji" aria-hidden="true">👋</span>
+                    <h2>Que bom te ver de novo!</h2>
+                    <p>Entre com seu e-mail ou matrícula para continuar de onde parou.</p>
+                    <form id="login-form">
+                        <label class="field-label" for="login-user">E-mail ou matrícula</label>
+                        <input id="login-user" type="text" placeholder="ex: juliana@escola.ce" required>
+                        <label class="field-label" for="login-pass">Senha</label>
+                        <input id="login-pass" type="password" placeholder="Sua senha" required>
+                        <button type="submit" class="btn-primary btn-full">Entrar na biblioteca</button>
+                    </form>
+                    <div class="auth-footer">
+                        <a href="#" data-page="register">Ainda não tem conta? Cadastre-se aqui</a>
+                        <details class="demo-creds">
+                            <summary>Acesso rápido para testar o sistema</summary>
+                            <ul>
+                                <li><strong>Juliana</strong> (bibliotecária) — juliana@escola.ce / admin123</li>
+                                <li><strong>Monitor</strong> — monitor@escola.ce / monitor123</li>
+                                <li><strong>Aluno</strong> — aluno@escola.ce / aluno123</li>
+                            </ul>
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="register" class="page">
+            <div class="auth-wrapper">
+                <div class="auth-box">
+                    <span class="auth-emoji" aria-hidden="true">✨</span>
+                    <h2>Vamos criar sua conta</h2>
+                    <p>Leva só um minutinho. Depois é só fazer login e explorar o acervo.</p>
+                    <form id="register-form">
+                        <label class="field-label" for="reg-name">Nome completo</label>
+                        <input id="reg-name" type="text" placeholder="Como você gosta de ser chamado(a)" required>
+                        <label class="field-label" for="reg-email">E-mail institucional</label>
+                        <input id="reg-email" type="email" placeholder="seunome@escola.ce" required>
+                        <label class="field-label" for="reg-matricula">Matrícula</label>
+                        <input id="reg-matricula" type="text" placeholder="Número da matrícula" required>
+                        <label class="field-label" for="reg-role">Tipo de acesso</label>
+                        <select id="reg-role" required>
+                            <option value="" disabled selected>Escolha seu perfil</option>
+                            <option value="aluno">Aluno(a)</option>
+                            <option value="monitor">Monitor(a) — precisa de autorização</option>
+                        </select>
+                        <label class="field-label" for="reg-pass">Senha</label>
+                        <input id="reg-pass" type="password" placeholder="Crie uma senha segura" required>
+                        <label class="field-label" for="reg-pass2">Confirmar senha</label>
+                        <input id="reg-pass2" type="password" placeholder="Digite a senha de novo" required>
+                        <label class="checkbox-label"><input type="checkbox" required> Li e aceito os termos de uso da biblioteca escolar</label>
+                        <button type="submit" class="btn-primary btn-full">Criar minha conta</button>
+                    </form>
+                    <div class="auth-footer">
+                        <a href="#" data-page="login">Já tem conta? Voltar ao login</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="dashboard" class="page page-app">
+            <div class="dashboard-layout">
+                <aside class="sidebar" aria-label="Menu lateral">
+                    <div class="user-profile">
+                        <div class="avatar" id="user-avatar">?</div>
+                        <div class="user-info">
+                            <h4 id="user-name">Visitante</h4>
+                            <p id="user-role">—</p>
+                        </div>
+                    </div>
+                    <nav class="side-nav">
+                        <a href="#" data-page="dashboard" class="active"><span class="nav-icon">🏠</span> Início</a>
+                        <a href="#" data-page="catalog"><span class="nav-icon">📖</span> Catálogo</a>
+                        <a href="#" data-page="loans"><span class="nav-icon">🔄</span> Empréstimos</a>
+                        <a href="#" data-page="admin"><span class="nav-icon">⚙️</span> Administração</a>
+                        <button class="btn-logout btn-logout-side"><span class="nav-icon">🚪</span> Sair da conta</button>
+                    </nav>
+                </aside>
+                <div class="main-content">
+                    <header class="top-bar">
+                        <div>
+                            <p class="greeting" id="greeting-text">Olá!</p>
+                            <h2>Painel da biblioteca</h2>
+                        </div>
+                        <span class="date-pill" id="current-date"></span>
+                    </header>
+                    <div class="stats-grid" id="stats-container"></div>
+                    <div class="activity-section">
+                        <div class="section-header">
+                            <h3>O que aconteceu por aqui</h3>
+                            <button class="btn-sm" id="refresh-activity" title="Atualizar lista">↻ Atualizar</button>
+                        </div>
+                        <div id="activity-list" class="activity-list"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="catalog" class="page page-app">
+            <div class="dashboard-layout">
+                <aside class="sidebar" aria-label="Menu lateral"></aside>
+                <div class="main-content">
+                    <header class="top-bar">
+                        <div>
+                            <h2>Catálogo de livros</h2>
+                            <p class="page-subtitle">Navegue pelo acervo e veja o que está disponível para empréstimo.</p>
+                        </div>
+                        <button class="btn-primary" id="open-book-modal">+ Novo livro</button>
+                    </header>
+                    <div class="filters">
+                        <div class="search-wrap">
+                            <span class="search-icon" aria-hidden="true">🔍</span>
+                            <input type="text" id="search-book" placeholder="Título, autor ou gênero..." aria-label="Buscar livros">
+                        </div>
+                        <select id="filter-status" aria-label="Filtrar por status">
+                            <option value="all">Todos os livros</option>
+                            <option value="available">Só disponíveis</option>
+                            <option value="borrowed">Emprestados</option>
+                        </select>
+                    </div>
+                    <div class="book-list" id="book-list"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="loans" class="page page-app">
+            <div class="dashboard-layout">
+                <aside class="sidebar" aria-label="Menu lateral"></aside>
+                <div class="main-content">
+                    <header class="top-bar">
+                        <div>
+                            <h2>Empréstimos</h2>
+                            <p class="page-subtitle">Acompanhe quem pegou o quê e quando deve devolver.</p>
+                        </div>
+                        <button class="btn-primary" id="open-loan-modal">+ Novo empréstimo</button>
+                    </header>
+                    <div class="tabs" role="tablist">
+                        <button class="tab active" data-tab="active" role="tab">Em andamento</button>
+                        <button class="tab" data-tab="late" role="tab">Com atraso</button>
+                        <button class="tab" data-tab="returned" role="tab">Já devolvidos</button>
+                    </div>
+                    <div class="table-container">
+                        <table id="loans-table">
+                            <thead>
+                                <tr><th>Aluno(a)</th><th>Livro</th><th>Retirada</th><th>Devolver até</th><th>Status</th><th></th></tr>
+                            </thead>
+                            <tbody id="loans-body"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="admin" class="page page-app">
+            <div class="dashboard-layout">
+                <aside class="sidebar" aria-label="Menu lateral"></aside>
+                <div class="main-content">
+                    <header class="top-bar">
+                        <div>
+                            <h2>Administração</h2>
+                            <p class="page-subtitle">Ferramentas para organizar pessoas e parcerias da biblioteca.</p>
+                        </div>
+                    </header>
+                    <div class="admin-grid">
+                        <button class="card admin-card" data-module="students">
+                            <span class="admin-icon">🎓</span>
+                            <h3>Alunos</h3>
+                            <p>Cadastros e histórico de leitura</p>
+                        </button>
+                        <button class="card admin-card" data-module="monitors">
+                            <span class="admin-icon">🙋</span>
+                            <h3>Monitores</h3>
+                            <p>Equipe de apoio na biblioteca</p>
+                        </button>
+                        <button class="card admin-card" data-module="publishers">
+                            <span class="admin-icon">🏢</span>
+                            <h3>Editoras</h3>
+                            <p>Parceiros e doações de livros</p>
+                        </button>
+                    </div>
+                    <div class="admin-content" id="admin-panel">
+                        <p class="empty-hint">Escolha um módulo acima para começar.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="modal-overlay" class="hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal">
+            <button class="modal-close" aria-label="Fechar">&times;</button>
+            <div id="modal-content"></div>
+        </div>
+    </div>
+
+    <div id="toast-container" aria-live="polite"></div>
+
+    <footer>
+        <div class="footer-content">
+            <p class="footer-brand"> Biblio EEEP — feito com carinho para a nossa biblioteca </p>
+            <p class="footer-credit">Equipe 1 · Trabalho de Adalberto · 3º ano de Informática · 2026</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
